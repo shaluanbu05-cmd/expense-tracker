@@ -8,6 +8,17 @@ A web app built with Python and Flask to record daily expenses and see where the
 - Edit and delete expenses (with a confirmation popup)
 - Summary page with total spending, category-wise totals and a pie chart
 
+## Screenshots
+
+### Add Expense
+![Add Expense](screenshots/add.png)
+
+### All Expenses
+![All Expenses](screenshots/expenses.png)
+
+### Summary
+![Summary](screenshots/summary.png)
+
 ## Tools Used
 - Python, Flask
 - SQLite (database)
