@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Expense</title>
+</head>
+<body>
+    <h1>Edit Expense</h1>
+    <form method="POST">
+        <label>Amount (₹):</label><br>
+        <input type="number" step="0.01" name="amount" value="{{ e['amount'] }}" required><br><br>
+
+        <label>Category:</label><br>
+        <select name="category">
+            {% for c in ["Food", "Travel", "Shopping", "Bills"] %}
+            <option {% if e['category'] == c %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Date:</label><br>
+        <input type="date" name="date" value="{{ e['date'] }}" required><br><br>
+
+        <label>Note:</label><br>
+        <input type="text" name="note" value="{{ e['note'] }}"><br><br>
+
+        <button type="submit">Save Changes</button>
+        <a href="/expenses">Cancel</a>
+    </form>
+</body>
+</html>

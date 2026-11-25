@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Expenses</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>All Expenses</h1>
+    <p><a href="/">+ Add new expense</a> | <a href="/summary">Summary</a></p>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount (₹)</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+        {% for e in expenses %}
+        <tr>
+            <td>{{ e["date"] }}</td>
+            <td>{{ e["category"] }}</td>
+            <td>{{ e["amount"] }}</td>
+            <td>{{ e["note"] }}</td>
+            <td>
+                <a href="/edit/{{ e['id'] }}">Edit</a> |
+                <a href="/delete/{{ e['id'] }}" onclick="return confirm('Are you sure you want to delete this expense?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
